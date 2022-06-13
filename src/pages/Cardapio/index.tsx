@@ -10,6 +10,8 @@ export default function Cardapio() {
     //o tipo do filtro pode ser um número, que vai ser o id de cada filtro
     //ou pode ser nulo, caso o usuário não escolha nenhum filtro
     const [filtro, setFiltro] = useState<number | null>(null);
+    //
+    const [ordenador, setOrdenador] = useState("");
     return (
         <main>
             <nav className={styles.menu}>
@@ -25,7 +27,7 @@ export default function Cardapio() {
                 <Buscador busca={busca} setBusca={setBusca}/>
                 <div className={styles.cardapio__filtros}>
                 <Filtros filtro={filtro} setFiltro={setFiltro}/>
-                <Ordenador />
+                <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
                 </div>
             </section>
         </main>
