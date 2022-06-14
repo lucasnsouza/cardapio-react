@@ -3,7 +3,7 @@ import {ReactComponent as Logo } from 'assets/logo.svg'
 import Buscador from './Buscador';
 import { useState } from 'react';
 import Filtros from './Filtros';
-import Ordenador from './Ordenador';
+import Ordenador, { OpcoesOrdenador } from './Ordenador';
 import Itens from './Itens';
 
 export default function Cardapio() {
@@ -12,7 +12,7 @@ export default function Cardapio() {
     //ou pode ser nulo, caso o usuário não escolha nenhum filtro
     const [filtro, setFiltro] = useState<number | null>(null);
     //
-    const [ordenador, setOrdenador] = useState("");
+    const [ordenador, setOrdenador] = useState<OpcoesOrdenador>('');
     return (
         <main>
             <nav className={styles.menu}>
