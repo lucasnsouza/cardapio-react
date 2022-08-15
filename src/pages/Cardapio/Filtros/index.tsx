@@ -1,6 +1,6 @@
-import React from "react";
-import filtros from "./filtros.json";
-import styles from "./Filtros.module.scss";
+import React from 'react';
+import filtros from './filtros.json';
+import styles from './Filtros.module.scss';
 import classNames from 'classnames';
 
 interface IOpcao {
@@ -18,7 +18,7 @@ export default function Filtros({ filtro, setFiltro }: Props) {
     //caso um filtro já esteja selecionado, clicar de novo nele
     //vai desmarcar o filtro selecionado
     if(filtro === opcao.id) {
-        return setFiltro(null);
+      return setFiltro(null);
     }
     //essa função vai receber o id da opcao selecionada
     return setFiltro(opcao.id);

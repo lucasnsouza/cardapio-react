@@ -1,7 +1,7 @@
-import styles from "./Itens.module.scss";
-import cardapio from "./itens.json";
-import Item from "./Item";
-import { useEffect, useState } from "react";
+import styles from './Itens.module.scss';
+import cardapio from './itens.json';
+import Item from './Item';
+import { useEffect, useState } from 'react';
 
 interface Props {
   busca: string,
@@ -33,17 +33,17 @@ export default function Itens({ busca, filtro, ordenador}: Props) {
   //função para ordenador
   function ordenar(novaLista: typeof cardapio) {
     switch(ordenador) {
-        case 'porcao':
-          //sort ordena os elementos, através de dois parâmetros
-          //aqui de acordo com a porção
-          return novaLista.sort((item1, item2) => item1.size > item2.size ? 1 : -1)
-        case 'qtd_pessoas':
-          return novaLista.sort((item1 , item2) => item1.serving > item2.serving ? 1 : -1)
-        case 'preco':
-          return novaLista.sort((item1, item2) => item1.price > item2.price ? 1 : -1)
-        default:
-          //no caso de nenhum ordenador selecionado, retrona a propria lista
-          return novaLista;    
+    case 'porcao':
+      //sort ordena os elementos, através de dois parâmetros
+      //aqui de acordo com a porção
+      return novaLista.sort((item1, item2) => item1.size > item2.size ? 1 : -1);
+    case 'qtd_pessoas':
+      return novaLista.sort((item1 , item2) => item1.serving > item2.serving ? 1 : -1);
+    case 'preco':
+      return novaLista.sort((item1, item2) => item1.price > item2.price ? 1 : -1);
+    default:
+      //no caso de nenhum ordenador selecionado, retrona a propria lista
+      return novaLista;    
     }
   }
 
